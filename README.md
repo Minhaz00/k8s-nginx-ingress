@@ -52,10 +52,12 @@ Now on to the next part, of creating Ingress Resources, we configured rules to r
     `http://127.0.0.1/server1` and `http://127.0.0.1/server2`.
     The nginx-ingress will redirect to the corresponding server according to the url path.  
 
+    The output should be similar to:
 
+    ![alt text](./images/image-3.png)
 
-
-
+    ![alt text](./images/image-4.png)
+    
 ##  Ingree resources defiinition
 
 
@@ -63,7 +65,6 @@ An ingress Resource is a set of rules and configurations applied on the ingress 
 
 
 Now, here is the ingree resources defiinition file:
-
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -93,3 +94,8 @@ spec:
 
 
 This YAML configuration defines an Ingress resource named "minimal-ingress" for routing HTTP traffic within a Kubernetes cluster. It specifies rules to direct requests with specific paths to corresponding backend services. Requests with a path prefix of "/server1" are directed to a backend service named "server1-service" running on port 3001. Similarly, requests with a path prefix of "/server2" are routed to a backend service named "server2-service" running on port 3002.
+
+
+## How minikube tunnel works
+
+![alt text](./images/image-2.png)
